@@ -42,6 +42,44 @@ girlfriendPhoto.addEventListener("mouseout", () => {
   girlfriendPhoto.src = images[0]; // Reset to the first image when the mouse is out
 });
 
+//Delete from here
+// Variable to keep track of the interval
+let hoverInterval;
+let isTouchActive = false; // Track if touch is active for toggling
+
+// Function to start alternating images
+function startAlternatingImages() {
+  hoverInterval = setInterval(() => {
+    girlfriendPhoto.src = girlfriendPhoto.src.includes("photo_1")
+      ? "/New/Gallery/photo_2_2024-10-30_00-34-13.jpg"
+      : girlfriendPhoto.src.includes("photo_2")
+      ? "/New/Gallery/photo_3_2024-10-30_00-34-13.jpg"
+      : girlfriendPhoto.src.includes("photo_3")
+      ? "/New/Gallery/photo_4_2024-10-30_00-34-13.jpg"
+      : "/New/Gallery/photo_1_2024-10-30_00-34-13.jpg";
+  }, 3000);
+}
+
+// Function to stop alternating images and reset to the first image
+function stopAlternatingImages() {
+  clearInterval(hoverInterval);
+  girlfriendPhoto.src = "/New/Gallery/photo_1_2024-10-30_00-34-13.jpg";
+}
+
+// Mouseover and mouseout for desktop
+girlfriendPhoto.addEventListener("mouseover", startAlternatingImages);
+girlfriendPhoto.addEventListener("mouseout", stopAlternatingImages);
+
+// Touch event for mobile
+girlfriendPhoto.addEventListener("touchstart", () => {
+  if (isTouchActive) {
+    stopAlternatingImages();
+  } else {
+    startAlternatingImages();
+  }
+  isTouchActive = !isTouchActive; // Toggle the state
+});
+//Delete up to here if it doesn't work
 
 // Select buttons and response element
 const yesButton = document.getElementById("yes-btn");
