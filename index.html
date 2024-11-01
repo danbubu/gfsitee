@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Will You Be My Girlfriend?</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Authentication Form -->
+    <div class="auth-container" id="auth-container">
+        <h2>Please enter your name and password 😏</h2>
+        <form id="auth-form">
+            <label for="name">Name:</label>
+            <input type="text" id="name" required>
+            <label for="password">Password:</label>
+            <input type="password" id="password" required>
+            <button type="submit">Submit</button>
+        </form>
+        <div id="auth-error" class="auth-error"></div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="container" id="main-content" style="display: none;">
+        <div id="photo-container">
+            <img src="/New/Gallery/photo_1_2024-10-30_00-34-13.jpg" alt="Girlfriend's Photo" class="girlfriend-photo1" id="girlfriend-photo">
+        </div>
+        <h1>Will you be my girlfriend again? 😊</h1>
+        <div class="buttons">
+            <button id="yes-btn">Yes</button>
+            <button id="no-btn">No</button>
+        </div>
+        <div id="response" class="response"></div>
+        <button id="logout-btn" style="display: none;">Logout</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
