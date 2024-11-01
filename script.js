@@ -24,10 +24,10 @@ authForm.addEventListener("submit", (e) => {
 let hoverInterval;
 let currentImageIndex = 0;
 const images = [
-  "/New/Gallery/photo_1_2024-10-30_00-34-13.jpg",
-  "/New/Gallery/photo_2_2024-10-30_00-34-13.jpg",
-  "/New/Gallery/photo_3_2024-10-30_00-34-13.jpg",
-  "/New/Gallery/photo_4_2024-10-30_00-34-13.jpg"
+  "Gallery/photo_1_2024-10-30_00-34-13.jpg",
+  "Gallery/photo_2_2024-10-30_00-34-13.jpg",
+  "Gallery/photo_3_2024-10-30_00-34-13.jpg",
+  "Gallery/photo_4_2024-10-30_00-34-13.jpg"
 ];
 
 girlfriendPhoto.addEventListener("mouseover", () => {
@@ -56,7 +56,7 @@ yesButton.addEventListener("click", () => {
 
   setTimeout(() => {
     girlfriendPhoto.classList.remove("shake");
-    girlfriendPhoto.src = "/New/Gallery/photo_3_2024-10-30_00-34-13.jpg"; // Display only the second image
+    girlfriendPhoto.src = "Gallery/photo_3_2024-10-30_00-34-13.jpg"; // Display only the second image
   }, 5000);
 
   logoutBtn.style.display = "inline-block"; // Show logout button
@@ -67,7 +67,7 @@ noButton.addEventListener("click", () => {
   response.innerHTML =
     "Oh well 😣 I still wish you the best in all your endeavours regardless 🤚";
   response.style.color = "red";
-  girlfriendPhoto.src = "/New/Gallery/giphy.webp"; // Show heartbreak image
+  girlfriendPhoto.src = "Gallery/giphy.webp"; // Show heartbreak image
   logoutBtn.style.display = "inline-block"; // Show logout button
 });
 
